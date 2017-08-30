@@ -52,7 +52,7 @@ public class Hamburger {
     }
 
     public void addLettuce(double lettuce) {
-        if (this.lettuce > 0) {
+        if (this.lettuce == 0) {
             this.lettuce = lettuce;
             price += this.lettuce;
         } else {
@@ -62,7 +62,7 @@ public class Hamburger {
     }
 
     public void addTomato(double tomato) {
-        if (this.tomato > 0) {
+        if (this.tomato == 0) {
             this.tomato = tomato;
             price += this.tomato;
         } else {
@@ -71,7 +71,7 @@ public class Hamburger {
     }
 
     public void addCarrot(double carrot) {
-        if (this.carrot > 0) {
+        if (this.carrot == 0) {
             this.carrot = carrot;
             price += this.carrot;
         } else {
@@ -80,7 +80,7 @@ public class Hamburger {
     }
 
     public void addOnion(double onion) {
-        if (this.onion > 0) {
+        if (this.onion == 0) {
             this.onion = onion;
             price += this.onion;
         } else {
