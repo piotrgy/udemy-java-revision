@@ -14,16 +14,16 @@ public class HealthyHamburger extends Hamburger {
         this.radish = 0;
     }
 
-    public double getChips() {
+    public double getBroccoli() {
         return broccoli;
     }
 
-    public double getDrinks() {
+    public double getRadish() {
         return radish;
     }
 
     public void addBroccoli(double broccoli) {
-        if (this.broccoli > 0) {
+        if (this.broccoli == 0) {
             this.broccoli = broccoli;
             price += this.broccoli;
         } else {
@@ -32,7 +32,7 @@ public class HealthyHamburger extends Hamburger {
     }
 
     public void addRadish(double radish) {
-        if (this.radish > 0) {
+        if (this.radish == 0) {
             this.radish = radish;
             price += this.radish;
         } else {
