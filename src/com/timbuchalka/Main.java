@@ -1,5 +1,6 @@
 package com.timbuchalka;
 
+import com.timbuchalka.billburgers.Hamburger;
 import com.timbuchalka.composition.Chair;
 import com.timbuchalka.composition.Door;
 import com.timbuchalka.composition.LightSource;
@@ -87,8 +88,8 @@ public class Main {
         System.out.println("Legs of chair: "+room.getChair().getLegs());
         room.allFields();
 */
-
-        Printer printer = new Printer();
+//Encapsulation
+        /*Printer printer = new Printer();
 
         printer.fillUpTheToner(135);
         System.out.println("Filled the toner and now the toner level is: "+printer.getTonerLevel());
@@ -98,9 +99,15 @@ public class Main {
 
         if (printer.isDuplex()) {
             System.out.println("This printer has a duplex.");
-        }else System.out.println("Thie printer has no duplex.");
+        }else System.out.println("Thie printer has no duplex.");*/
 
-
+//BillBurger
+        Hamburger hamburger = new Hamburger("White", "Chicken", 4.70);
+        System.out.println("Basic Hamburger with "+hamburger.getBreadRollType()+" and "+hamburger.getMeat()+" costs "+hamburger.getPrice()+" PLN.");
+        hamburger.addLettuce(1.80);
+        hamburger.addTomato(0.80);
+        System.out.println("Added lettuce and tomato.");
+        System.out.println("Now hamburger costs "+hamburger.getPrice()+" PLN.");
 
 
     }
