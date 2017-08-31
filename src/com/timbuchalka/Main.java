@@ -1,6 +1,7 @@
 package com.timbuchalka;
 
 import com.timbuchalka.billburgers.Hamburger;
+import com.timbuchalka.billburgers.HealthyHamburger;
 import com.timbuchalka.composition.Chair;
 import com.timbuchalka.composition.Door;
 import com.timbuchalka.composition.LightSource;
@@ -110,6 +111,12 @@ public class Main {
         System.out.println("Now hamburger costs "+hamburger.getPrice()+" PLN.");
 
 
+        HealthyHamburger healthyHamburger = new HealthyHamburger("Brown", "Bacon", 5.70);
+        System.out.println("Healthy Hamburger with "+healthyHamburger.getBreadRollType()+" and "+healthyHamburger.getMeat()+" costs "+healthyHamburger.getPrice()+" PLN.");
+        healthyHamburger.addLettuce(1.80);
+        healthyHamburger.addRadish(2.56);
+        System.out.println("Added lettuce and radish.");
+        System.out.println("Now Healthy Hamburger costs "+healthyHamburger.getPrice()+" PLN.");
     }
 
 
