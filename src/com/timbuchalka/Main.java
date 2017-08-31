@@ -1,5 +1,6 @@
 package com.timbuchalka;
 
+import com.timbuchalka.billburgers.DeluxeHamburger;
 import com.timbuchalka.billburgers.Hamburger;
 import com.timbuchalka.billburgers.HealthyHamburger;
 import com.timbuchalka.composition.Chair;
@@ -117,6 +118,13 @@ public class Main {
         healthyHamburger.addRadish(2.56);
         System.out.println("Added lettuce and radish.");
         System.out.println("Now Healthy Hamburger costs "+healthyHamburger.getPrice()+" PLN.");
+
+        DeluxeHamburger deluxeHamburger = new DeluxeHamburger("White", "Bacon and chicken", 15.72);
+        System.out.println("Deluxe Hamburger with "+deluxeHamburger.getBreadRollType()+" and "+deluxeHamburger.getMeat()+" costs "+deluxeHamburger.getPrice()+" PLN.");
+        deluxeHamburger.addOnion(2.80);
+        deluxeHamburger.addDrinks(3.81);
+        System.out.println("Added drinks but can't add onion.");
+        System.out.println("Now Deluxe Hamburger costs "+deluxeHamburger.getPrice()+" PLN.");
     }
 
 
