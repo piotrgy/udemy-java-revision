@@ -39,4 +39,24 @@ public class DeluxeHamburger extends Hamburger {
             System.out.println("You have enough of drinks!");
         }
     }
+
+    @Override
+    public void addLettuce(double lettuce) {
+        System.out.println("You can't add lettuce to Deluxe Hamburger");
+    }
+
+    @Override
+    public void addTomato(double tomato) {
+        System.out.println("You can't add tomato to Deluxe Hamburger");
+    }
+
+    @Override
+    public void addCarrot(double carrot) {
+        System.out.println("You can't add carrot to Deluxe Hamburger");
+    }
+
+    @Override
+    public void addOnion(double onion) {
+        System.out.println("You can't add onion to Deluxe Hamburger");
+    }
 }
