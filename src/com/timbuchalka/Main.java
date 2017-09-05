@@ -9,6 +9,10 @@ import com.timbuchalka.composition.LightSource;
 import com.timbuchalka.composition.Room;
 import com.timbuchalka.encapsulation.Printer;
 
+import static com.timbuchalka.arrays.SortArrayDescending.getIntegers;
+import static com.timbuchalka.arrays.SortArrayDescending.printArray;
+import static com.timbuchalka.arrays.SortArrayDescending.sortIntegers;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -104,7 +108,7 @@ public class Main {
         }else System.out.println("Thie printer has no duplex.");*/
 
 //BillBurger
-        Hamburger hamburger = new Hamburger("White", "Chicken", 4.70);
+        /*Hamburger hamburger = new Hamburger("White", "Chicken", 4.70);
         System.out.println("Basic Hamburger with "+hamburger.getBreadRollType()+" and "+hamburger.getMeat()+" costs "+hamburger.getPrice()+" PLN.");
         hamburger.addLettuce(1.80);
         hamburger.addTomato(0.80);
@@ -124,7 +128,16 @@ public class Main {
         deluxeHamburger.addOnion(2.80);
         deluxeHamburger.addDrinks(3.81);
         System.out.println("Added drinks but can't add onion.");
-        System.out.println("Now Deluxe Hamburger costs "+deluxeHamburger.getPrice()+" PLN.");
+        System.out.println("Now Deluxe Hamburger costs "+deluxeHamburger.getPrice()+" PLN.");*/
+
+        final int LENGTH_OF_ARRAY = 6;
+        int[] sourceArray = getIntegers(LENGTH_OF_ARRAY);
+        System.out.println("Source array:");
+        printArray(sourceArray);
+        System.out.println("Now sorting descending.");
+        int[] sortedArray = sortIntegers(sourceArray);
+        System.out.println("Sorted array:");
+        printArray(sortedArray);
     }
 
 
