@@ -15,12 +15,12 @@ public class ContactList {
     }
 
     public void addContact(Contact contact) {
-        String contactName = contact.getName();
-        if (findContact(contactName) >=0) {
-            System.out.println("Contact: "+ contactName + "already exists, enter another name.");
+
+        if (findContact(contact.getName()) >=0) {
+            System.out.println("Contact: "+ contact.getName() + " already exists, enter another name.");
         }else {
             contacts.add(contact);
-            System.out.println("Added contact: " + contactName);
+            System.out.println("Added contact: " + contact.getName());
         }
     }
 
@@ -32,11 +32,15 @@ public class ContactList {
         }
     }
 
-
-    private int findContact(String contactName) {
-        Contact searchedContact = new Contact();
-        searchedContact.setName(contactName);
-        return contacts.indexOf(searchedContact);
+        private int findContact(String searchedContactName) {
+        String existedContactName;
+        for (int i = 0; i < this.contacts.size() ; i++) {
+            existedContactName = contacts.get(i).getName();
+            if (existedContactName.equalsIgnoreCase(searchedContactName)){
+                return i;
+            }
+        }
+        return -1;
     }
 
 
