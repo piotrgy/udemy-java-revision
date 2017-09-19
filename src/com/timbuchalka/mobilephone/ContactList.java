@@ -16,9 +16,9 @@ public class ContactList {
 
     public void addContact(Contact contact) {
 
-        if (findContact(contact.getName()) >=0) {
-            System.out.println("Contact: "+ contact.getName() + " already exists, enter another name.");
-        }else {
+        if (findContact(contact.getName()) >= 0) {
+            System.out.println("Contact: " + contact.getName() + " already exists, enter another name.");
+        } else {
             contacts.add(contact);
             System.out.println("Added contact: " + contact.getName());
         }
@@ -32,11 +32,21 @@ public class ContactList {
         }
     }
 
-        private int findContact(String searchedContactName) {
+    public void findContactByName(String searchedContactName) {
+        int index = findContact(searchedContactName);
+        if (index >= 0) {
+            System.out.println("Contact: " + contacts.get(index).getName() + " is on the " + (index + 1)
+                    + "'th" + " position on the list and has a number: " + contacts.get(index).getPhoneNumber());
+        } else {
+            System.out.println("The're is no contact named " + searchedContactName + " on your list.");
+        }
+    }
+
+    private int findContact(String searchedContactName) {
         String existedContactName;
-        for (int i = 0; i < this.contacts.size() ; i++) {
+        for (int i = 0; i < this.contacts.size(); i++) {
             existedContactName = contacts.get(i).getName();
-            if (existedContactName.equalsIgnoreCase(searchedContactName)){
+            if (existedContactName.equalsIgnoreCase(searchedContactName)) {
                 return i;
             }
         }
