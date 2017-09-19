@@ -32,6 +32,17 @@ public class ContactList {
         }
     }
 
+    public void modifyContact(String existedContactName, Contact modyfiedContact) {
+        int position = findContact(existedContactName);
+        if (position >= 0) {
+            contacts.set(position, modyfiedContact);
+            System.out.println("Contact " + existedContactName + " is modified. Now the name is: " + modyfiedContact.getName()
+                    + " and phone number is: " + modyfiedContact.getPhoneNumber());
+        } else {
+            System.out.println("The're is no contact named " + existedContactName + " on your list.");
+        }
+    }
+
     public void findContactByName(String searchedContactName) {
         int index = findContact(searchedContactName);
         if (index >= 0) {
