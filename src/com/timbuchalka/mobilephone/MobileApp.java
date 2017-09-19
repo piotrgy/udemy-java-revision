@@ -14,5 +14,16 @@ public class MobileApp {
 
         contactList.displayContacts();
 
+        contactList.findContactByName("Ola");
+        contactList.findContactByName("Zenek");
+
+        Contact modifiedContact = new Contact("Julek", "502134798");
+        contactList.modifyContact("Adam", modifiedContact);
+        contactList.modifyContact("Franek", modifiedContact);
+        contactList.displayContacts();
+
+        contactList.removeContact("Janek");
+        contactList.removeContact("Edek");
+        contactList.displayContacts();
     }
 }
