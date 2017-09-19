@@ -64,5 +64,15 @@ public class ContactList {
         return -1;
     }
 
+    public void removeContact(String contactName) {
+        int index = findContact(contactName);
+        if (index >= 0) {
+            contacts.remove(index);
+            System.out.println("Contact: " + contactName + " is removed.");
+        } else {
+            System.out.println("The're is no contact named " + contactName + " on your list.");
+        }
+    }
+
 
 }
