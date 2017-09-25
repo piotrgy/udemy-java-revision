@@ -19,8 +19,8 @@ public class MobileApp {
 
         contactList.displayContacts();
 
-        /*contactList.findContactByName("Ola");
-        contactList.findContactByName("Zenek");
+        /*contactList.isFoundContactByName("Ola");
+        contactList.isFoundContactByName("Zenek");
 
         Contact modifiedContact = new Contact("Julek", "502134798");
         contactList.modifyContact("Adam", modifiedContact);
@@ -50,6 +50,9 @@ public class MobileApp {
                 case 2:
                     addMobileContact();
                     break;
+                case 3:
+                    modifyMobileContact();
+                    break;
                 case 6:
                     quit = true;
                     break;
@@ -76,5 +79,18 @@ public class MobileApp {
         String phoneNumber = scanner.nextLine();
 
         contactList.addContact(new Contact(name, phoneNumber));
+    }
+
+    public static void modifyMobileContact() {
+        System.out.println("Enter current contact name: ");
+        String searchingName = scanner.nextLine();
+        if (contactList.isFoundContactByName(searchingName)) {
+            System.out.println("Enter new name for contact " + searchingName + ": ");
+            String newName = scanner.nextLine();
+            System.out.println("Enter new phone number for this contact: ");
+            String newPhoneNumber = scanner.nextLine();
+            Contact modyfiedContact = new Contact(newName, newPhoneNumber);
+            contactList.modifyContact(searchingName, modyfiedContact);
+        }
     }
 }
