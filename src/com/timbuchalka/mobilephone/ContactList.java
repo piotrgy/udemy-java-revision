@@ -43,13 +43,15 @@ public class ContactList {
         }
     }
 
-    public void findContactByName(String searchedContactName) {
+    public boolean isFoundContactByName(String searchedContactName) {
         int index = findContact(searchedContactName);
         if (index >= 0) {
             System.out.println("Contact: " + contacts.get(index).getName() + " is on the " + (index + 1)
                     + "'th" + " position on the list and has a number: " + contacts.get(index).getPhoneNumber());
+            return true;
         } else {
             System.out.println("The're is no contact named " + searchedContactName + " on your list.");
+            return false;
         }
     }
 
