@@ -56,6 +56,9 @@ public class MobileApp {
                 case 4:
                     removeMobileContact();
                     break;
+                case 5:
+                    findMobileContact();
+                    break;
                 case 6:
                     quit = true;
                     break;
@@ -103,5 +106,11 @@ public class MobileApp {
         if (contactList.isFoundContactByName(searchingName)) {
             contactList.removeContact(searchingName);
         }
+    }
+
+    public static void findMobileContact() {
+        System.out.println("Enter name of contact, that you want find: ");
+        String searchingName = scanner.nextLine();
+        contactList.isFoundContactByName(searchingName);
     }
 }
