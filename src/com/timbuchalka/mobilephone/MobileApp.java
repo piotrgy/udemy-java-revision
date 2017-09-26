@@ -53,6 +53,9 @@ public class MobileApp {
                 case 3:
                     modifyMobileContact();
                     break;
+                case 4:
+                    removeMobileContact();
+                    break;
                 case 6:
                     quit = true;
                     break;
@@ -91,6 +94,14 @@ public class MobileApp {
             String newPhoneNumber = scanner.nextLine();
             Contact modyfiedContact = new Contact(newName, newPhoneNumber);
             contactList.modifyContact(searchingName, modyfiedContact);
+        }
+    }
+
+    public static void removeMobileContact() {
+        System.out.println("Enter name of contact, that you want remove: ");
+        String searchingName = scanner.nextLine();
+        if (contactList.isFoundContactByName(searchingName)) {
+            contactList.removeContact(searchingName);
         }
     }
 }
