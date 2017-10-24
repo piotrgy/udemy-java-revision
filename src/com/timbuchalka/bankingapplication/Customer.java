@@ -43,4 +43,13 @@ public class Customer {
     private void displayMessage(int messageId) {
         System.out.println(MESSAGE[messageId]);
     }
+
+    public void displayTransactions() {
+        System.out.println("Customer's: " + this.name + " transactions:");
+        int numberOfTransacton = 1;
+        for (double transaction : transactions) {
+            System.out.println(numberOfTransacton + ". " + transaction + ",");
+            numberOfTransacton ++;
+        }
+    }
 }
