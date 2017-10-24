@@ -32,6 +32,7 @@ public class Customer {
                 sum += transaction;
             }
             if (sum < Math.abs(amount)) {
+                displayMessage(1);
                 return false;
             }
         }
