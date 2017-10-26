@@ -47,13 +47,22 @@ public class Branch {
         return -1;
     }
 
-    public void displayCustomers() {
+    public void displayCustomers(boolean withTransactions) {
         System.out.println("Customers of branch number " + this.branchID + ":");
         int numberOfCustomer = 1;
-        for (Customer customer : customers) {
-            System.out.println(numberOfCustomer + ". " + customer.getName() + ",");
-            numberOfCustomer ++;
+        if (withTransactions) {
+            for (Customer customer : customers) {
+                System.out.println(numberOfCustomer + ". " + customer.getName() + ",");
+                customer.displayTransactions();
+                numberOfCustomer ++;
+            }
+        } else {
+            for (Customer customer : customers) {
+                System.out.println(numberOfCustomer + ". " + customer.getName() + ",");
+                numberOfCustomer ++;
+            }
         }
+
     }
 
     private void displayMessage(int messageId) {

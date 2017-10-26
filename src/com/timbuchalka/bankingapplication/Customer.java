@@ -48,7 +48,7 @@ public class Customer {
         System.out.println("Customer's: " + this.name + " transactions:");
         int numberOfTransacton = 1;
         for (double transaction : transactions) {
-            System.out.println(numberOfTransacton + ". " + transaction + ",");
+            System.out.println("   " + numberOfTransacton + ". " + transaction + ",");
             numberOfTransacton ++;
         }
     }
