@@ -4,11 +4,21 @@ package com.timbuchalka.bankingapplication;
 import java.util.ArrayList;
 
 public class Branch {
+    private int branchID;
     private ArrayList<Customer> customers;
+
+    public Branch(int branchID) {
+        this.branchID = branchID;
+        this.customers = new ArrayList<>();
+    }
+
+    public int getBranchID() {
+        return branchID;
+    }
 
     public boolean addCustomerInBranch(String name, double amount) {
         int customerIndex = findCustomerInBranch(name);
-        if (amount < 0 || customerIndex >=0) {
+        if (customerIndex >=0) {
             return false;
         }
         Customer newCustomer = new Customer(name, amount);
@@ -25,7 +35,7 @@ public class Branch {
         return false;
     }
 
-    private int findCustomerInBranch(String customerName) {
+    public int findCustomerInBranch(String customerName) {
         for (int i = 0; i < this.customers.size(); i++) {
             Customer customer = this.customers.get(i);
             if (customer.getName().equalsIgnoreCase(customerName)) {
