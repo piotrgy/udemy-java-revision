@@ -44,4 +44,13 @@ public class Branch {
         }
         return -1;
     }
+
+    public void displayCustomers() {
+        System.out.println("Customers of branch number " + this.branchID + ":");
+        int numberOfCustomer = 1;
+        for (Customer customer : customers) {
+            System.out.println(numberOfCustomer + ". " + customer.getName() + ",");
+            numberOfCustomer ++;
+        }
+    }
 }
