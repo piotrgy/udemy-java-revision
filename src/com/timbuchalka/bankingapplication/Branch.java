@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Branch {
     private int branchID;
     private ArrayList<Customer> customers;
+    private static final String[] MESSAGE = {"That customer exists already."};
 
     public Branch(int branchID) {
         this.branchID = branchID;
@@ -19,6 +20,7 @@ public class Branch {
     public boolean addCustomerInBranch(String name, double amount) {
         int customerIndex = findCustomerInBranch(name);
         if (customerIndex >=0) {
+            displayMessage(0);
             return false;
         }
         Customer newCustomer = new Customer(name, amount);
@@ -52,5 +54,9 @@ public class Branch {
             System.out.println(numberOfCustomer + ". " + customer.getName() + ",");
             numberOfCustomer ++;
         }
+    }
+
+    private void displayMessage(int messageId) {
+        System.out.println(MESSAGE[messageId]);
     }
 }
