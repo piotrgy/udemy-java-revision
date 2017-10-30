@@ -30,4 +30,14 @@ public class Bank {
     private void displayMessage(int messageId) {
         System.out.println(MESSAGE[messageId]);
     }
+
+    public boolean addCustomerToBank(int branchID, String customerName, double initialTransaction) {
+        int branchIndex = findBranch(branchID);
+        if (branchIndex >= 0) {
+            branches.get(branchIndex).addCustomerInBranch(customerName, initialTransaction);
+            return true;
+        }
+        displayMessage(1);
+        return false;
+    }
 }
