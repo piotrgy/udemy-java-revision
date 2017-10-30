@@ -40,4 +40,15 @@ public class Bank {
         displayMessage(1);
         return false;
     }
+
+    public boolean addCustomersTransaction(int branchID, String customerName, double amount) {
+        int branchIndex = findBranch(branchID);
+        if (branchIndex >= 0) {
+            branches.get(branchIndex).addTransactionInBranch(customerName, amount);
+            return true;
+        }
+        displayMessage(1);
+        return false;
+    }
+
 }
