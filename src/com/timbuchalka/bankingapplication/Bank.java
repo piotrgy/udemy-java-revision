@@ -51,4 +51,10 @@ public class Bank {
         return false;
     }
 
+    public void displayListOfCustomers(boolean withTransactions) {
+        for (Branch branch : branches) {
+            branch.displayCustomers(withTransactions);
+            System.out.println("  *************************");
+        }
+    }
 }
