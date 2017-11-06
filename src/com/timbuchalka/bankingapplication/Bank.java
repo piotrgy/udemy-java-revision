@@ -7,6 +7,10 @@ public class Bank {
     private ArrayList<Branch> branches;
     private static final String[] MESSAGE = {"That branch exists already.", "Can't find that branch."};
 
+    public Bank() {
+        branches = new ArrayList<>();
+    }
+
     public boolean addBranch(int branchID) {
         if (findBranch(branchID) >= 0) {
             displayMessage(0);
