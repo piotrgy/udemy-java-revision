@@ -11,6 +11,7 @@ public class Customer {
 
     public Customer(String name, double amount) {
         this.name = name;
+        transactions = new ArrayList<>();
         if (amount < 0) {
             displayMessage(0);
         }else transactions.add(amount);
