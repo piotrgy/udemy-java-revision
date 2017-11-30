@@ -24,6 +24,13 @@ public class BankApp {
         bankBuilder(4, names3, initials3);
 
         myBank.displayListOfCustomers(true);
+
+        myBank.addCustomersTransaction(1, "Anna", 25.0);
+        myBank.addCustomersTransaction(2, "Alice", -35.0);
+        myBank.addCustomersTransaction(3, "John", -5.0);
+        myBank.addCustomersTransaction(4, "Cynthia", -80.0);
+
+        myBank.displayListOfCustomers(true);
     }
 
     private static void bankBuilder(int branchId, String[] names, double[] initials) {
