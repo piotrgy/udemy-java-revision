@@ -6,6 +6,7 @@ import java.util.LinkedList;
 
 public class MusicPlayer {
     private LinkedList<Song> playlist = new LinkedList<>();
+    private MusicLibrary musicLibrary = new MusicLibrary();
 
     public static void main(String[] args) {
 
@@ -19,6 +20,19 @@ public class MusicPlayer {
 
         final String[] invincibleAlbum = {"Unbreakable", "Heartbreaker", "Invincible", "Heaven Can Wait", "You Rock My World", "Butterflies", "Speechless"};
         final int[] invincibleAlbumDuration = {6, 4, 2, 3, 4, 5, 5};
+
+        MusicPlayer musicPlayer = new MusicPlayer();
+
+        Album bad = Album.buildAlbum("Bad", badAlbum, badAlbumDuration);
+        musicPlayer.musicLibrary.getAlbums().add(bad);
+
+        Album thriller = Album.buildAlbum("Thriller", thrillerAlbum, thrillerAlbumDuration);
+        musicPlayer.musicLibrary.getAlbums().add(thriller);
+
+        Album invincible = Album.buildAlbum("Invincible", invincibleAlbum, invincibleAlbumDuration);
+        musicPlayer.musicLibrary.getAlbums().add(invincible);
+
+        musicPlayer.showMenu();
 
     }
 }
