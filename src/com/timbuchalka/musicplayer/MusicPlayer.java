@@ -35,4 +35,16 @@ public class MusicPlayer {
         musicPlayer.showMenu();
 
     }
+
+
+    private void showMenu(){
+        System.out.println("Choose action:\npress ");
+        System.out.println("0 - to quit\n" +
+                "1 - go to next song\n" +
+                "2 - go to previous song\n" +
+                "3 - replay current song\n" +
+                "4 - display the playlist\n" +
+                "5 - remove current song from the playlist  \n" +
+                "6 - print menu options");
+    }
 }
