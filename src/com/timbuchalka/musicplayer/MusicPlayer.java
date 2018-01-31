@@ -37,6 +37,7 @@ public class MusicPlayer {
         musicPlayer.showMenu();
 
 
+
     }
 
     private void useThePlayer() {
@@ -62,7 +63,7 @@ public class MusicPlayer {
                         goingForward = true;
                     }
                     if (listIterator.hasNext()) {
-                        System.out.println("Now playing " + listIterator.next());
+                        System.out.println("Now playing " + listIterator.next().getTitle());
                     } else {
                         System.out.println("Reached the end of the playlist");
                         goingForward = false;
@@ -77,7 +78,7 @@ public class MusicPlayer {
                         goingForward = false;
                     }
                     if (listIterator.hasPrevious()) {
-                        System.out.println("Now playing " + listIterator.previous());
+                        System.out.println("Now playing " + listIterator.previous().getTitle());
                     } else {
                         System.out.println("We are at the start of the playlist");
                         goingForward = true;
@@ -87,12 +88,12 @@ public class MusicPlayer {
                 case 3:
                     if (goingForward) {
                         if (listIterator.hasPrevious()) {
-                            System.out.println("Now playing " + listIterator.previous());
+                            System.out.println("Now playing " + listIterator.previous().getTitle());
                             listIterator.next();
                         } else System.out.println("The track is no longer available.");
                     } else {
                         if (listIterator.hasNext()) {
-                            System.out.println("Now playing " + listIterator.next());
+                            System.out.println("Now playing " + listIterator.next().getTitle());
                             listIterator.previous();
                         } else System.out.println("The track is no longer available.");
                     }
@@ -107,6 +108,7 @@ public class MusicPlayer {
                         System.out.println(" " + counter + ": " + song.getTitle() + " - " + song.getDuration() + " min");
                         counter++;
                     }
+                    break;
 
                 case 5:
                     listIterator.remove();
