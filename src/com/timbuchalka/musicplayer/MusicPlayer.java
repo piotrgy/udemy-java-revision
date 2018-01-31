@@ -41,7 +41,7 @@ public class MusicPlayer {
         }
 
         musicPlayer.showMenu();
-
+        musicPlayer.useThePlayer();
 
 
     }
@@ -118,6 +118,7 @@ public class MusicPlayer {
 
                 case 5:
                     listIterator.remove();
+                    System.out.println("You removed the last playing song");
                     break;
 
                 case 6:
