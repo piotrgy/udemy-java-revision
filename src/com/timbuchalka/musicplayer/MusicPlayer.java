@@ -35,9 +35,7 @@ public class MusicPlayer {
         musicPlayer.musicLibrary.getAlbums().add(invincible);
 
         for (int i = 0; i < musicPlayer.musicLibrary.getAlbums().size() ; i++) {
-            for (int j = 0; j < musicPlayer.musicLibrary.getAlbums().get(i).getSongs().size(); j++) {
-                musicPlayer.playlist.add(musicPlayer.musicLibrary.getAlbums().get(i).getSongs().get(j));
-            }
+            musicPlayer.playlist.addAll(musicPlayer.musicLibrary.getAlbums().get(i).getSongs());
         }
 
         musicPlayer.showMenu();
