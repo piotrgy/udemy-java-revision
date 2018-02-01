@@ -34,9 +34,9 @@ public class MusicPlayer {
         Album invincible = Album.buildAlbum("Invincible", invincibleAlbum, invincibleAlbumDuration);
         musicPlayer.musicLibrary.getAlbums().add(invincible);
 
-        for (int i = 0; i < musicPlayer.musicLibrary.getAlbums().size() ; i++) {
+        /*for (int i = 0; i < musicPlayer.musicLibrary.getAlbums().size() ; i++) {
             musicPlayer.playlist.addAll(musicPlayer.musicLibrary.getAlbums().get(i).getSongs());
-        }
+        }*/
 
         musicPlayer.showMenu();
         musicPlayer.useThePlayer();
@@ -120,12 +120,42 @@ public class MusicPlayer {
                     break;
 
                 case 6:
+                    while (listIterator.hasNext()) {
+                        listIterator.next();
+                    }
+                    listIterator.add(chooseSong());
+                    System.out.println("Song added.");
+                    while (listIterator.hasPrevious()) {
+                        listIterator.previous();
+                    }
+                    break;
+
+                case 7:
                     showMenu();
                     break;
             }
         }
     }
 
+    private Song chooseSong() {
+        System.out.println("Which album do you want to choose? Type a number:");
+        for (int i = 0; i < musicLibrary.getAlbums().size(); i++) {
+            System.out.println(i + 1 + ": " + musicLibrary.getAlbums().get(i).getTitle());
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        int albumNumber = scanner.nextInt();
+        scanner.nextLine();
+        albumNumber--;
+
+        System.out.println("Which song do you want to add to playlist? Type a number:");
+        musicLibrary.getAlbums().get(albumNumber).displaySongs();
+        int songNumber = scanner.nextInt();
+        scanner.nextLine();
+        songNumber--;
+
+        return musicLibrary.getAlbums().get(albumNumber).getSongs().get(songNumber);
+    }
 
     private void showMenu() {
         System.out.println("Choose action:\npress ");
@@ -135,6 +165,7 @@ public class MusicPlayer {
                 "3 - replay current song\n" +
                 "4 - display the playlist\n" +
                 "5 - remove current song from the playlist  \n" +
-                "6 - print menu options");
+                "6 - add the song to the playlist  \n" +
+                "7 - print menu options");
     }
 }
