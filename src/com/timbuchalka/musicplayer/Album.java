@@ -26,4 +26,11 @@ public class Album {
         }
         return album;
     }
+
+    public void displaySongs(){
+        System.out.println("The songs of the album " + title + ":");
+        for (int i = 0; i < songs.size() ; i++) {
+            System.out.println(" " + (i + 1) + ": " + songs.get(i).getTitle() + " - " + songs.get(i).getDuration() + " min");
+        }
+    }
 }
