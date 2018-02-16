@@ -1,9 +1,36 @@
 package com.timbuchalka.thefantasygame;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+//section 10, lecture 76 - Interfaces Challenge
+
 public class Main {
+    public static void main(String[] args) {
+        ISaveable wizard = new Wizard();
+        ISaveable warrior = new Warrior();
+
+        System.out.println("Info for wizard.");
+        saveToGameHero(wizard);
+        System.out.println("Info for warrior.");
+        saveToGameHero(warrior);
+
+        System.out.println("Displaying objects by implemented method.");
+        List list = wizard.returnListOfValues();
+        System.out.println(list);
+
+        list = warrior.returnListOfValues();
+        System.out.println(list);
+
+        System.out.println("Displaying objects by toString method.");
+        System.out.println(wizard);
+        System.out.println(warrior);
+    }
+
+    private static void saveToGameHero(ISaveable hero) {
+        hero.populateObjectsFields(readValues());
+    }
 
     public static ArrayList<String> readValues() {
         ArrayList<String> values = new ArrayList<String>();
