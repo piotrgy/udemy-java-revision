@@ -1,4 +1,4 @@
-package innerandanonymous;
+package com.timbuchalka.innerandanonymous;
 
 public class Song {
     private String title;

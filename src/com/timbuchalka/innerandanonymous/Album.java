@@ -1,4 +1,4 @@
-package innerandanonymous;
+package com.timbuchalka.innerandanonymous;
 
 import java.util.ArrayList;
 
