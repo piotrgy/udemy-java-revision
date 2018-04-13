@@ -32,6 +32,4 @@ public abstract class MyListItem {
     }
 
     public abstract int compareTo(MyListItem comparedItem);
-
-    public abstract boolean addInOrder(MyListItem newItem);
 }
