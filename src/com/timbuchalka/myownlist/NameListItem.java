@@ -11,9 +11,4 @@ public class NameListItem extends MyListItem {
         String heldValue = (String) this.getHeldValue();
         return heldValue.compareToIgnoreCase((String) comparedItem.getHeldValue());
     }
-
-    @Override
-    public boolean addInOrder(MyListItem newItem) {
-        return false;
-    }
 }
