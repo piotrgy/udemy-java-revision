@@ -24,7 +24,9 @@ public class MyNameLinkedList {
                     head.setPrevItem(newItem);
                     System.out.println("Item is added at the beginning of the list.");
                 } else {
+                    newItem.setPrevItem(head.moveToPrevItem());
                     head.moveToPrevItem().setNextItem(newItem);
+                    head.setPrevItem(newItem);
                     System.out.println("Item is added to the list.");
                 }
                 newItem.setNextItem(head);
@@ -40,5 +42,6 @@ public class MyNameLinkedList {
 
     public void remove() {
         head.moveToPrevItem().setNextItem(head.moveToNextItem());
+        head = head.moveToPrevItem();
     }
 }
