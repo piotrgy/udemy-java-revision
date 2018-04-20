@@ -11,4 +11,9 @@ public class NameListItem extends MyListItem {
         String heldValue = (String) this.getHeldValue();
         return heldValue.compareToIgnoreCase((String) comparedItem.getHeldValue());
     }
+
+    @Override
+    public String toString() {
+        return (String) getHeldValue();
+    }
 }
