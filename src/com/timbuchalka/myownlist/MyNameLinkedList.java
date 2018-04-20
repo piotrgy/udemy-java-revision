@@ -10,9 +10,7 @@ public class MyNameLinkedList {
             return true;
         }
 
-        while (head.moveToPrevItem() != null) {
-            head = head.moveToPrevItem();
-        }
+        goToBeginning();
 
         do {
             int comparing = head.compareTo(newItem);
@@ -32,16 +30,46 @@ public class MyNameLinkedList {
                 newItem.setNextItem(head);
                 return true;
             } else {
+                if (head.moveToNextItem() == null) {
+                    head.setNextItem(newItem);
+                    System.out.println("Item is added to the list.");
+                    return true;
+                }
                 head = head.moveToNextItem();
             }
         } while (head.moveToNextItem() != null);
         head.setNextItem(newItem);
         newItem.setPrevItem(head);
+        System.out.println("Item is added to the list.");
         return true;
+    }
+
+    private void goToBeginning() {
+        while (head.moveToPrevItem() != null) {
+            head = head.moveToPrevItem();
+        }
     }
 
     public void remove() {
         head.moveToPrevItem().setNextItem(head.moveToNextItem());
+        head.moveToNextItem().setPrevItem(head.moveToPrevItem());
         head = head.moveToPrevItem();
+        System.out.println("Item " + head.getHeldValue() + " removed.");
     }
+
+    public void showAll() {
+        if (head == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+
+        goToBeginning();
+        byte counter = 1;
+        do {
+            System.out.println(counter + ". " + head);
+            counter ++;
+            head = head.moveToNextItem();
+        } while (head.moveToNextItem() != null);
+    }
+
 }
