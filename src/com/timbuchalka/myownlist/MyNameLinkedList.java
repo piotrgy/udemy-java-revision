@@ -51,10 +51,16 @@ public class MyNameLinkedList {
     }
 
     public void remove() {
-        head.moveToPrevItem().setNextItem(head.moveToNextItem());
-        head.moveToNextItem().setPrevItem(head.moveToPrevItem());
-        head = head.moveToPrevItem();
-        System.out.println("Item " + head.getHeldValue() + " removed.");
+        if (head.moveToNextItem() != null) {
+            head.moveToPrevItem().setNextItem(head.moveToNextItem());
+            head.moveToNextItem().setPrevItem(head.moveToPrevItem());
+            System.out.println("Item " + head.getHeldValue() + " removed.");
+            head = head.moveToPrevItem();
+        }else {
+            System.out.println("Item " + head.getHeldValue() + " removed.");
+            head = head.moveToPrevItem();
+            head.setNextItem(null);
+        }
     }
 
     public void showAll() {
