@@ -75,7 +75,7 @@ public class MyNameLinkedList {
             System.out.println(counter + ". " + head);
             counter++;
             head = head.moveToNextItem();
-        } while (head.moveToNextItem() != null);
+        } while (head != null);
     }
 
 }
