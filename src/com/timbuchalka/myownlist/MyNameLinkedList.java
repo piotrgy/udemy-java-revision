@@ -61,6 +61,7 @@ public class MyNameLinkedList {
             head = head.moveToPrevItem();
             head.setNextItem(null);
         }
+        //System.out.println("Now head is on: " + head.getHeldValue());
     }
 
     public void showAll() {
@@ -71,11 +72,12 @@ public class MyNameLinkedList {
 
         goToBeginning();
         byte counter = 1;
-        do {
-            System.out.println(counter + ". " + head);
-            counter++;
+        System.out.println(counter + ". " + head);
+        while (head.moveToNextItem() != null) {
             head = head.moveToNextItem();
-        } while (head != null);
+            counter++;
+            System.out.println(counter + ". " + head);
+        }
     }
 
 }
