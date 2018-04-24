@@ -12,12 +12,13 @@ public class MyNameLinkedList {
 
         goToBeginning();
 
-        do {
+        while (true) {
             int comparing = head.compareTo(newItem);
             if (comparing == 0) {
                 System.out.println("The same item, as the new one already exists on the list.");
                 return false;
-            } else if (comparing > 0) {
+            }
+            if (comparing > 0) {
                 if (head.moveToPrevItem() == null) {
                     head.setPrevItem(newItem);
                     System.out.println("Item is added at the beginning of the list.");
@@ -29,19 +30,18 @@ public class MyNameLinkedList {
                 }
                 newItem.setNextItem(head);
                 return true;
-            } else {
-                if (head.moveToNextItem() == null) {
+            }
+            if (comparing < 0) {
+                if (head.moveToNextItem() != null) {
+                    head = head.moveToNextItem();
+                } else {
                     head.setNextItem(newItem);
-                    System.out.println("Item is added to the list.");
+                    newItem.setPrevItem(head);
+                    System.out.println("Item is added at the end of list.");
                     return true;
                 }
-                head = head.moveToNextItem();
             }
-        } while (head.moveToNextItem() != null);
-        head.setNextItem(newItem);
-        newItem.setPrevItem(head);
-        System.out.println("Item is added to the list.");
-        return true;
+        }
     }
 
     private void goToBeginning() {
@@ -56,7 +56,7 @@ public class MyNameLinkedList {
             head.moveToNextItem().setPrevItem(head.moveToPrevItem());
             System.out.println("Item " + head.getHeldValue() + " removed.");
             head = head.moveToPrevItem();
-        }else {
+        } else {
             System.out.println("Item " + head.getHeldValue() + " removed.");
             head = head.moveToPrevItem();
             head.setNextItem(null);
@@ -73,7 +73,7 @@ public class MyNameLinkedList {
         byte counter = 1;
         do {
             System.out.println(counter + ". " + head);
-            counter ++;
+            counter++;
             head = head.moveToNextItem();
         } while (head.moveToNextItem() != null);
     }
