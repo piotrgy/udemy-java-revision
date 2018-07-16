@@ -8,7 +8,7 @@ public class MyListApp {
         String[] data = stringData.split(" ");
 
         for (String s : data) {
-            NameListItem nameListItem = new NameListItem(s);
+            MyListItem nameListItem = new NameListItem(s);
             nameLinkedList.addInOrder(nameListItem);
         }
         nameLinkedList.showAll();
