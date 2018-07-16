@@ -6,4 +6,8 @@ public abstract class TeamSport {
     public TeamSport(String nameOfSport) {
         this.nameOfSport = nameOfSport;
     }
+
+    public String getNameOfSport() {
+        return nameOfSport;
+    }
 }
